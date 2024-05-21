@@ -22,11 +22,12 @@ const userShema = new mongoose.Schema({
 
 const userModel = mongoose.model('Korisnik', userShema);
 
-module.exports.model = userModel;
+module.exports = userModel;
 
-module.exports.getUser = async function (userName, userAge){
-    const korisnici = await userModel.find({ime : userName}, {starost: userAge}).exec();
-    if(korisnici.length > 0) return korisnici[0];
-    else return null;
-};
+module.exports.getUser = async function (ime, starost){
 
+    const user = await userModel.findOne({ime: ime, starost: starost});
+
+    return user;
+
+}
