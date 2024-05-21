@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/3-4/public/1.css">
+    
+</head>
+<body>
+
+    <h1>LISTA KORISNIKA</h1>
+
+    <table>
+        <tr>
+            <th>SLIKA</th>
+            <th>INFORMACIJE</th>
+        </tr>
+        <% for(let user of korisnik) {%>
+        <tr>
+            <td rowspan="3">
+                <img src="/3-4/public/user.png" alt="" srcset="">
+            </td>
+            <td>IME: <%= user.ime %></td>
+        </tr>
+        <tr>
+            <td>STAROST: <%= user.starost %></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="obrisi">
+            </td>
+        </tr>
+        <% }%>
+    </table>
+
+    <script src="/3-4/server.js"></script>
+    
+</body>
+</html>
