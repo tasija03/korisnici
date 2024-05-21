@@ -7,3 +7,4 @@ const userListController = require('../controllers/userList');
 router.get('/', userListController.displayUser);
 
 module.exports = router;
+
